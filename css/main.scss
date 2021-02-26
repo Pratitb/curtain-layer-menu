@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    min-height: 100vh;
+
+    section{
+        h2{
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 8vw;
+        }
+    }
+    .toggle{
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 1) url(../images/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        z-index: 1000000;
+
+        span{
+            width: 10px;
+            height: 10px;
+            color: rgba(0, 0, 0, 1);
+        }
+    }
+    .navigation{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span{
+            position: absolute;
+            top: -100%;
+            left: calc(25% * var(--i));
+            width: 25%;
+            height: 100%;
+            transition: 0.25s;
+            transition-delay: calc(0.25s * var(--i));
+            background: #de0611;
+            border: 1px solid rgba(0, 0, 0, 0.25);
+        }
+        ul{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            z-index: 2;
+            transform: translateX(-100px);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.5s;
+            list-style-type: none;
+            li{
+                margin-bottom: 3rem;
+            }
+
+            a{
+                text-decoration: none;
+                font-size: 5rem;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 1);
+
+                &:hover{
+                    padding: 1.5rem;
+                    color: #de0611;
+                    background: rgba(255, 255, 255, 1);
+                }
+                
+            }
+        }
+    }
+    .navigation.active{
+        visibility: visible;
+    }
+    .navigation.active span{
+        top: 0;
+    }
+    .navigation.active ul{
+        transform: translateX(0px);
+            opacity: 1;
+            visibility: visible;
+    }
+    .toggle.active{
+        background: #fff url(../images/close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}

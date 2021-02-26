@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #111;
+  min-height: 100vh;
+}
+
+body section h2 {
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 8vw;
+}
+
+body .toggle {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background: white url(../images/menu.png);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 1000000;
+}
+
+body .toggle span {
+  width: 10px;
+  height: 10px;
+  color: black;
+}
+
+body .navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .navigation span {
+  position: absolute;
+  top: -100%;
+  left: calc(25% * var(--i));
+  width: 25%;
+  height: 100%;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-transition-delay: calc(0.25s * var(--i));
+          transition-delay: calc(0.25s * var(--i));
+  background: #de0611;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+body .navigation ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 2;
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  list-style-type: none;
+}
+
+body .navigation ul li {
+  margin-bottom: 3rem;
+}
+
+body .navigation ul a {
+  text-decoration: none;
+  font-size: 5rem;
+  font-weight: 600;
+  color: white;
+}
+
+body .navigation ul a:hover {
+  padding: 1.5rem;
+  color: #de0611;
+  background: white;
+}
+
+body .navigation.active {
+  visibility: visible;
+}
+
+body .navigation.active span {
+  top: 0;
+}
+
+body .navigation.active ul {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  opacity: 1;
+  visibility: visible;
+}
+
+body .toggle.active {
+  background: #fff url(../images/close.png);
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*# sourceMappingURL=main.css.map */
